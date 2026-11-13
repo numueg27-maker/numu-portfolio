@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NUMU | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--bg2:#f6f1fa;--tx:#24212a;--mu:#625b6b;--pu:#4f0b76;--go:#e6b50a;--card:#fff;--bd:#e5dbee;--hero:#2a0541;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#150c1d;--bg2:#1d1228;--tx:#f3eef8;--mu:#b8aac6;--pu:#b98be0;--card:#221631;--bd:#3a2850;--hero:#0e0616;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#150c1d;--bg2:#1d1228;--tx:#f3eef8;--mu:#b8aac6;--pu:#b98be0;--card:#221631;--bd:#3a2850;--hero:#0e0616;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;font-family:Cairo,Tahoma,sans-serif;background:var(--bg);color:var(--tx);line-height:1.8;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;display:flex;justify-content:space-between;align-items:center;padding:10px 5vw;background:var(--hero);color:#fff}
+nav b{font-size:20px;letter-spacing:2px}nav div a{margin-inline-start:18px;font-size:14px;opacity:.85}nav div a:hover{color:var(--go);opacity:1}
+.hero{background:radial-gradient(circle at 20% 20%,#5d1a8a,var(--hero) 65%);color:#fff;padding:70px 5vw 90px;text-align:center;position:relative;overflow:hidden}
+.hero svg{width:130px;height:130px;margin:auto;display:block}
+.arrow{stroke-dasharray:300;stroke-dashoffset:300;animation:draw 2s .3s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.hero h1{font-size:clamp(34px,7vw,64px);margin:10px 0 0;font-weight:800;letter-spacing:4px}
+.hero h1 span{color:var(--go)}.hero p{max-width:680px;margin:12px auto;opacity:.9;font-size:18px}
+.btn{display:inline-block;padding:11px 26px;border-radius:30px;background:var(--go);color:#2a0541;font-weight:800;margin:8px}
+.btn.o{background:none;border:1px solid var(--go);color:var(--go)}
+.orb{position:absolute;border-radius:50%;background:var(--go);opacity:.12;animation:fl 8s ease-in-out infinite}
+.o1{width:220px;height:220px;top:-60px;left:-40px}.o2{width:140px;height:140px;bottom:20px;right:8%;animation-delay:2s}
+@keyframes fl{50%{transform:translateY(24px)}}
+section{padding:70px 5vw;max-width:1150px;margin:auto}
+.alt{background:var(--bg2);max-width:none}.alt>div{max-width:1150px;margin:auto}
+h2{font-size:clamp(26px,4vw,38px);margin:0 0 6px;color:var(--pu);font-weight:800}
+h2+p.sub{color:var(--mu);margin:0 0 28px;max-width:760px}
+.tag{display:inline-block;background:var(--go);color:#2a0541;border-radius:20px;padding:0 12px;font-size:13px;font-weight:800}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:20px;transition:.3s}
+.card:hover{transform:translateY(-6px);border-color:var(--go);box-shadow:0 12px 28px rgba(79,11,118,.18)}
+.card h3{margin:0 0 4px;font-size:18px;color:var(--pu)}.card p{margin:0;color:var(--mu);font-size:15px}
+.ico{font-size:28px}
+.rv{opacity:0;transform:translateY(30px);transition:.8s}.rv.in{opacity:1;transform:none}
+.proj{display:grid;gap:30px;grid-template-columns:1.1fr 1fr;align-items:start}
+@media(max-width:820px){.proj{grid-template-columns:1fr}nav div a:nth-child(n+4){display:none}}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.chips span{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:4px 12px;font-size:14px}
+.mods{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.mod{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:14px 6px;text-align:center;font-size:14px;font-weight:600;animation:pop 3s ease-in-out infinite}
+.mod i{display:block;font-style:normal;font-size:24px}
+.mod:nth-child(3n+2){animation-delay:.4s}.mod:nth-child(3n){animation-delay:.8s}
+@keyframes pop{50%{transform:translateY(-5px);border-color:var(--go)}}
+.flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:16px 0}
+.flow b{background:var(--pu);color:#fff;border-radius:10px;padding:4px 14px;font-size:14px}
+.flow s{text-decoration:none;color:var(--go);font-weight:800;animation:nudge 1.2s infinite}
+@keyframes nudge{50%{transform:translateX(-5px)}}
+ul.ck{list-style:none;padding:0;margin:8px 0}ul.ck li{padding-inline-start:26px;position:relative;margin:5px 0}
+ul.ck li:before{content:"✓";position:absolute;inset-inline-start:0;color:var(--go);font-weight:800}
+.links a{color:var(--pu);font-weight:800;border-bottom:2px solid var(--go);margin-inline-end:16px}
+.sv{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.contact{background:var(--hero);color:#fff;text-align:center;padding:70px 5vw}
+.contact a{color:var(--go);font-weight:800}
+footer{background:var(--hero);color:#b8aac6;text-align:center;padding:16px;font-size:13px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}.arrow{stroke-dashoffset:0}}
+
+html[lang=en] .ar{display:none}html[lang=ar] .en{display:none}
+.lang{background:none;border:1px solid var(--go);color:var(--go);border-radius:20px;padding:2px 14px;font:inherit;font-size:13px;font-weight:800;cursor:pointer}
+.bi{display:grid;gap:30px;grid-template-columns:1fr 1fr;align-items:center}
+@media(max-width:820px){.bi{grid-template-columns:1fr}}
+.dash{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:18px}
+.kp{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
+.kp div{background:var(--bg2);border-radius:10px;padding:8px;text-align:center;font-size:12px;color:var(--mu)}
+.kp i{display:block;height:8px;border-radius:4px;background:var(--go);margin:6px auto 0;animation:w 3s ease-in-out infinite alternate}
+.kp div:nth-child(2) i{background:var(--pu);animation-delay:.5s}.kp div:nth-child(3) i{animation-delay:1s}
+@keyframes w{from{width:25%}to{width:85%}}
+.bars{display:flex;align-items:flex-end;gap:8px;height:120px}
+.bars b{flex:1;background:linear-gradient(var(--pu),#7a3fa8);border-radius:6px 6px 0 0;transform-origin:bottom;animation:g 2.4s ease-in-out infinite alternate}
+.bars b:nth-child(1){height:45%}.bars b:nth-child(2){height:70%;animation-delay:.2s}.bars b:nth-child(3){height:55%;animation-delay:.4s}.bars b:nth-child(4){height:90%;animation-delay:.6s}.bars b:nth-child(5){height:65%;animation-delay:.8s}.bars b:nth-child(6){height:100%;animation-delay:1s;background:var(--go)}
+@keyframes g{from{transform:scaleY(.6)}to{transform:scaleY(1)}}
+</style>
+</head>
+<body>
+<nav><b>NUMU <span style="color:var(--go)"><span class="ar">نمو</span><span class="en"></span></span></b><div><a href="#about"><span class="ar">من نحن</span><span class="en">About</span></a><a href="#erp"><span class="ar">بيت الخير</span><span class="en">Beit El Kheir</span></a><a href="#guzel">Güzel</a><a href="#kims">KIMS</a><a href="#bi">Power BI</a><a href="#services"><span class="ar">خدماتنا</span><span class="en">Services</span></a><a href="#contact"><span class="ar">تواصل</span><span class="en">Contact</span></a><button class="lang" id="lb" style="margin-inline-start:18px">العربية</button></div></nav>
+
+<header class="hero">
+<span class="orb o1"></span><span class="orb o2"></span>
+<svg viewBox="0 0 100 100" aria-label="NUMU"><path d="M18 82V20l36 36V20h12v62L30 46v36z" fill="#7a3fa8"/><path class="arrow" d="M20 84 L82 22 M60 20 L84 18 L82 42" stroke="#e6b50a" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<h1>NUMU <span><span class="ar">نمو</span><span class="en"></span></span></h1>
+<p>Smarter Systems. Stronger Business.<br><span class="ar">نبني أنظمة ذكية تنمّي شغلك: ERP، تقارير Power BI، مواقع، ولوحات تحكم.</span><span class="en">We build smart systems that grow your business: ERP, Power BI reporting, websites and dashboards.</span></p>
+<a class="btn" href="#erp"><span class="ar">شوف أعمالنا</span><span class="en">See our work</span></a><a class="btn o" href="#contact"><span class="ar">ابدأ مشروعك</span><span class="en">Start your project</span></a>
+</header>
+
+<section id="about" class="rv">
+<h2><span class="ar">من نحن</span><span class="en">About NUMU</span></h2>
+<p class="sub"><span class="ar">NUMU شركة تكنولوجيا مقرها القاهرة، بدأت من 9 شهور، وبتشتغل مع أي عميل مهما كان مكانه. بنفهم دورة شغل العميل الأول، وبعدين نختار الحل المناسب بدل ما نفرض عليه نظام جاهز.</span><span class="en">NUMU is a technology company based in Cairo, founded 9 months ago, working with clients wherever they are. We understand each client’s workflow first, then choose the right solution instead of forcing a ready-made one.</span></p>
+<div class="grid">
+<div class="card"><div class="ico">🎯</div><h3><span class="ar">نبدأ بالفهم</span><span class="en">We start with understanding</span></h3><p><span class="ar">تحليل دورة العمل وتحديد نقاط التعطيل قبل أي تنفيذ.</span><span class="en">We analyze your workflow and find the bottlenecks before building anything.</span></p></div>
+<div class="card"><div class="ico">🛠️</div><h3><span class="ar">تنفيذ وتخصيص</span><span class="en">Build & customize</span></h3><p><span class="ar">نظام بيخدم طريقة شغلك، مش العكس.</span><span class="en">A system that fits the way you work, not the other way around.</span></p></div>
+<div class="card"><div class="ico">🎓</div><h3><span class="ar">تدريب ومتابعة</span><span class="en">Training & follow-up</span></h3><p><span class="ar">نظبط الصلاحيات ونديّب الفريق ونتابع بعد التشغيل.</span><span class="en">We set up permissions, train your team and follow up after go-live.</span></p></div>
+<div class="card"><div class="ico">🌍</div><h3><span class="ar">أي مكان</span><span class="en">Anywhere</span></h3><p><span class="ar">مقرنا القاهرة، وبنخدم عملاء في كل المحافظات وعن بُعد.</span><span class="en">Based in Cairo, serving clients across Egypt and remotely.</span></p></div>
+</div></section>
+
+<div class="alt" id="erp"><div style="padding:70px 5vw"><div class="proj">
+<div class="rv">
+<span class="tag"><span class="ar">مشروع ERP | Odoo 19</span><span class="en">ERP Project | Odoo 19</span></span>
+<h2><span class="ar">مصنع بيت الخير</span><span class="en">Beit El Kheir Factory</span></h2>
+<p class="sub" style="margin-bottom:8px"><span class="ar">مصنع عسل وحلاوة طحينية في نطاق أسيوط والصعيد. بيصنّع منتجاته وبيوزعها على المحلات من خلال مناديب توزيع. نفّذنا لهم نظام Odoo 19 يربط الشراء والتصنيع والمخزون والمبيعات والتوزيع والمحاسبة في نظام واحد.</span><span class="en">A honey and tahini halawa factory serving Assiut and Upper Egypt. It manufactures its products and distributes them to shops through sales reps. We delivered an Odoo 19 system connecting purchasing, manufacturing, inventory, sales, distribution and accounting in one platform.</span></p>
+<div class="chips"><span>Implementation</span><span>Customization</span><span>Training</span><span>Odoo 19</span></div>
+<h3 style="color:var(--pu);margin-bottom:0"><span class="ar">دورة العمل بعد التنفيذ</span><span class="en">Workflow after go-live</span></h3>
+<div class="flow"><b><span class="ar">شراء الخامات</span><span class="en">Raw materials</span></b><s>›</s><b><span class="ar">التصنيع</span><span class="en">Manufacturing</span></b><s>›</s><b><span class="ar">المخزون</span><span class="en">Inventory</span></b><s>›</s><b><span class="ar">المبيعات</span><span class="en">Sales</span></b><s>›</s><b><span class="ar">مناديب التوزيع</span><span class="en">Distribution reps</span></b><s>›</s><b><span class="ar">المحاسبة</span><span class="en">Accounting</span></b></div>
+<h3 style="color:var(--pu);margin-bottom:0"><span class="ar">اللي عملناه</span><span class="en">What we did</span></h3>
+<ul class="ck">
+<li><span class="ar"><b>التنفيذ:</b> تحليل دورة المصنع، إعداد الشركة والمنتجات، وتشغيل الوحدات الأساسية.</span><span class="en"><b>Implementation:</b> factory workflow analysis, company and product setup, and activation of the core modules.</span></li>
+<li><span class="ar"><b>التخصيص:</b> تعديل النظام ليناسب طبيعة تصنيع العسل والحلاوة وتوزيعها على المحلات.</span><span class="en"><b>Customization:</b> tailoring the system to honey and halawa production and shop distribution.</span></li>
+<li><span class="ar"><b>التدريب:</b> تدريب فريق المصنع والمناديب كل حسب دوره وصلاحياته.</span><span class="en"><b>Training:</b> training factory staff and reps by role and permissions.</span></li>
+<li><span class="ar"><b>التوزيع:</b> متابعة سيارات ومناديب التوزيع والمبيعات للمحلات.</span><span class="en"><b>Distribution:</b> tracking delivery vehicles, reps and sales to shops.</span></li>
+</ul></div>
+<div class="rv"><h3 style="color:var(--pu);margin-bottom:0"><span class="ar">واجهة النظام: الوحدات المفعّلة</span><span class="en">System interface: active modules</span></h3><div class="mods"><div class="mod"><i>📈</i><span class="ar">المبيعات</span><span class="en">Sales</span></div><div class="mod"><i>📦</i><span class="ar">المخزون</span><span class="en">Inventory</span></div><div class="mod"><i>🏭</i><span class="ar">التصنيع</span><span class="en">Manufacturing</span></div><div class="mod"><i>🛒</i><span class="ar">الشراء</span><span class="en">Purchase</span></div><div class="mod"><i>🧮</i><span class="ar">المحاسبة</span><span class="en">Accounting</span></div><div class="mod"><i>🚚</i><span class="ar">سيارات التوزيع</span><span class="en">Delivery Vehicles</span></div><div class="mod"><i>🏪</i><span class="ar">نقطة البيع</span><span class="en">Point of Sale</span></div><div class="mod"><i>👥</i><span class="ar">الموظفون</span><span class="en">Employees</span></div><div class="mod"><i>🕒</i><span class="ar">الحضور</span><span class="en">Attendance</span></div><div class="mod"><i>🏖️</i><span class="ar">الإجازات</span><span class="en">Time Off</span></div><div class="mod"><i>💵</i><span class="ar">النفقات</span><span class="en">Expenses</span></div><div class="mod"><i>🧾</i><span class="ar">كشوف المرتبات</span><span class="en">Payroll</span></div><div class="mod"><i>📇</i><span class="ar">جهات الاتصال</span><span class="en">Contacts</span></div><div class="mod"><i>📊</i><span class="ar">لوحات البيانات</span><span class="en">Dashboards</span></div><div class="mod"><i>🔗</i><span class="ar">متتبع الرابط</span><span class="en">Link Tracker</span></div></div></div>
+</div></div></div>
+
+<section id="guzel"><div class="proj">
+<div class="rv">
+<span class="tag"><span class="ar">موقع + صفحة منتج + داشبورد</span><span class="en">Website + Product Page + Dashboard</span></span>
+<h2>Güzel Beauty</h2>
+<p class="sub" style="margin-bottom:8px"><span class="ar">علامة منتجات عناية طبيعية (مرطبات شفايف، بودي سبلاش، لوشن). صممنا لهم موقع المتجر ولوحة تحكم يديروا منها المنتجات، وصفحة إطلاق إبداعية لمنتجهم الجديد Nail Nourish Oil.</span><span class="en">A natural beauty brand (lip moisturizers, body splash, lotions). We built their store website, an admin dashboard to manage products, and a creative launch page for their new Nail Nourish Oil.</span></p>
+<div class="links"><a href="https://guzelbeauty.net/" target="_blank" rel="noopener"><span class="ar">الموقع ↗</span><span class="en">Website ↗</span></a><a href="https://guzel-feature.vercel.app/" target="_blank" rel="noopener"><span class="ar">صفحة المنتج ↗</span><span class="en">Product page ↗</span></a></div>
+<h3 style="color:var(--pu);margin-bottom:0"><span class="ar">موقع المتجر</span><span class="en">The store website</span></h3>
+<ul class="ck"><li><span class="ar">واجهة عرض للمنتجات بهوية وردية راقية وSEO ووسوم مشاركة.</span><span class="en">Product showcase with an elegant pink identity, SEO and social sharing tags.</span></li><li><span class="ar">رسائل البراند: طبيعي، Cruelty-free، Vegan-friendly.</span><span class="en">Brand messaging: natural, cruelty-free, vegan-friendly.</span></li><li><span class="ar">داشبورد لإدارة المنتجات وباقي محتوى الموقع.</span><span class="en">Admin dashboard to manage products and site content.</span></li></ul>
+<h3 style="color:var(--pu);margin-bottom:0"><span class="ar">صفحة إطلاق Nail Nourish Oil</span><span class="en">Nail Nourish Oil launch page</span></h3>
+<ul class="ck"><li><span class="ar">تجربة سكرول سينمائية: شاشة تحميل «Preparing your ritual» ثم استعراض مكونات القلم قطعة قطعة.</span><span class="en">Cinematic scroll experience: a “Preparing your ritual” loader, then the pen revealed component by component.</span></li><li><span class="ar">أقسام: Components، Assembly، طريقة الاستخدام في 3 خطوات، Beauty Reveal.</span><span class="en">Sections: Components, Assembly, a 3-step ritual and the Beauty Reveal.</span></li><li><span class="ar">نسخة عربية وإنجليزية، وزر شراء واضح.</span><span class="en">Arabic and English versions with a clear shop call-to-action.</span></li></ul>
+</div>
+<div class="rv grid" style="grid-template-columns:1fr 1fr">
+<div class="card"><div class="ico">🛍️</div><h3><span class="ar">Store</span><span class="en">Store</span></h3><p><span class="ar">متجر المنتجات</span><span class="en">Product store</span></p></div><div class="card"><div class="ico">🎛️</div><h3><span class="ar">Dashboard</span><span class="en">Dashboard</span></h3><p><span class="ar">تحكم كامل في المنتجات</span><span class="en">Full product control</span></p></div><div class="card"><div class="ico">✨</div><h3><span class="ar">Launch Page</span><span class="en">Launch Page</span></h3><p><span class="ar">إعلان المنتج بشكل إبداعي</span><span class="en">Creative product reveal</span></p></div><div class="card"><div class="ico">🌐</div><h3><span class="ar">AR / EN</span><span class="en">AR / EN</span></h3><p><span class="ar">ثنائي اللغة</span><span class="en">Bilingual</span></p></div>
+</div></div></section>
+
+<div class="alt" id="kims"><div style="padding:70px 5vw"><div class="proj">
+<div class="rv">
+<span class="tag"><span class="ar">موقع كافيه</span><span class="en">Café Website</span></span>
+<h2>KIMS Café</h2>
+<p class="sub" style="margin-bottom:8px"><span class="ar">«Modern Retro Café Experience»: موقع بتصميم عصري ريترو لكافيه، بعنوان Boldly Brewed، يعرض المنيو كاملًا بصور وأسعار.</span><span class="en">“Modern Retro Café Experience”: a retro-modern café website headlined “Boldly Brewed”, presenting the full menu with photos and prices.</span></p>
+<div class="links"><a href="https://kims-cafe-teal.vercel.app/" target="_blank" rel="noopener"><span class="ar">شوف الموقع ↗</span><span class="en">Visit the site ↗</span></a></div>
+<ul class="ck"><li><span class="ar">منيو من 17 قسم وأكثر من 150 صنف: قهوة، إسبريسو، ميلك شيك، موهيتو، حلويات، مخبوزات، ساندوتشات وغيرها.</span><span class="en">A 17-category menu with 150+ items: coffee, espresso, milkshakes, mojitos, desserts, bakery, sandwiches and more.</span></li><li><span class="ar">صفحات: المنيو، الفروع، قصتنا، الكاترنج.</span><span class="en">Pages: Menu, Locations, Our Story, Catering.</span></li><li><span class="ar">قسم Weekly Special وجودة البن وروابط السوشيال.</span><span class="en">Weekly Special, bean-quality story and social links.</span></li></ul>
+</div>
+<div class="rv grid" style="grid-template-columns:1fr 1fr">
+<div class="card"><div class="ico">☕</div><h3><span class="ar">Menu</span><span class="en">Menu</span></h3><p><span class="ar">17 قسم بالصور والأسعار</span><span class="en">17 categories with photos and prices</span></p></div><div class="card"><div class="ico">📍</div><h3><span class="ar">Locations</span><span class="en">Locations</span></h3><p><span class="ar">صفحة الفروع</span><span class="en">Branches page</span></p></div><div class="card"><div class="ico">📖</div><h3><span class="ar">Our Story</span><span class="en">Our Story</span></h3><p><span class="ar">حكاية البراند</span><span class="en">The brand story</span></p></div><div class="card"><div class="ico">🎉</div><h3><span class="ar">Catering</span><span class="en">Catering</span></h3><p><span class="ar">طلبات المناسبات</span><span class="en">Event orders</span></p></div>
+</div></div></div></div>
+
+<section id="bi"><div class="bi">
+<div class="rv">
+<span class="tag">Power BI</span>
+<h2><span class="ar">تقارير وداشبورد Power BI</span><span class="en">Power BI Reports & Dashboards</span></h2>
+<p class="sub" style="margin-bottom:8px"><span class="ar">بنحوّل بيانات شركتك لقرارات. بنربط Odoo وملفات Excel وقواعد البيانات في Data Model واحد، ونبني عليه تقارير تفاعلية تتحدّث تلقائيًا.</span><span class="en">We turn your company data into decisions. We connect Odoo, Excel files and databases into a single data model and build interactive reports on top that refresh automatically.</span></p>
+<ul class="ck">
+<li><span class="ar"><b>المبيعات:</b> حسب المنتج والعميل والفرع والمندوب.</span><span class="en"><b>Sales:</b> by product, customer, branch and sales rep.</span></li>
+<li><span class="ar"><b>المخزون:</b> الكميات وحركة الأصناف والنواقص والأصناف بطيئة الحركة.</span><span class="en"><b>Inventory:</b> stock levels, item movement, shortages and slow movers.</span></li>
+<li><span class="ar"><b>التصنيع والتكلفة:</b> الاستهلاك الفعلي والهالك وتكلفة المنتج.</span><span class="en"><b>Manufacturing & cost:</b> actual consumption, scrap and product cost.</span></li>
+<li><span class="ar"><b>التحصيل والمالية:</b> مديونيات العملاء والمصروفات وهامش الربح.</span><span class="en"><b>Collections & finance:</b> customer balances, expenses and profit margin.</span></li>
+<li><span class="ar"><b>تحديث تلقائي ونشر:</b> مشاركة التقارير مع الإدارة بصلاحيات مناسبة، مع تدريب الفريق على استخدامها.</span><span class="en"><b>Scheduled refresh & sharing:</b> reports shared with management under proper access, plus team training.</span></li>
+</ul>
+<div class="chips"><span>Data Modeling</span><span>DAX</span><span>Power Query</span><span>Odoo Connector</span><span>KPI Dashboards</span></div>
+</div>
+<div class="dash rv" aria-hidden="true">
+<div class="kp"><div><span class="ar">المبيعات</span><span class="en">Sales</span><i></i></div><div><span class="ar">المخزون</span><span class="en">Stock</span><i></i></div><div><span class="ar">التحصيل</span><span class="en">Collections</span><i></i></div></div>
+<div class="bars"><b></b><b></b><b></b><b></b><b></b><b></b></div>
+<p style="text-align:center;color:var(--mu);font-size:12px;margin:10px 0 0"><span class="ar">شكل توضيحي لداشبورد</span><span class="en">Illustrative dashboard mockup</span></p>
+</div></div></section>
+
+<div class="alt" id="services"><div style="padding:70px 5vw">
+<h2 class="rv"><span class="ar">خدماتنا</span><span class="en">Our Services</span></h2>
+<p class="sub rv"><span class="ar">ERP وPower BI هم نقطة قوتنا، لكن مش الوحيدين. دي الخدمات اللي ممكن نقدمها لشركتك:</span><span class="en">ERP and Power BI are our core, but not our only services. Here is what we can do for your company:</span></p>
+<div class="sv"><div class="card rv"><div class="ico">⚙️</div><h3><span class="ar">أنظمة ERP على Odoo</span><span class="en">Odoo ERP Systems</span></h3><p><span class="ar">تحليل، تنفيذ، تخصيص، ترحيل بيانات، تدريب ودعم بعد التشغيل.</span><span class="en">Analysis, implementation, customization, data migration, training and post go-live support.</span></p></div><div class="card rv"><div class="ico">📊</div><h3><span class="ar">تقارير Power BI</span><span class="en">Power BI Reports</span></h3><p><span class="ar">تقارير تفاعلية بتجمع بياناتك من Odoo وExcel وقواعد البيانات في مكان واحد.</span><span class="en">Interactive reports that bring your data from Odoo, Excel and databases into one place.</span></p></div><div class="card rv"><div class="ico">📈</div><h3><span class="ar">داشبورد إدارية</span><span class="en">Management Dashboards</span></h3><p><span class="ar">لوحات KPI للمبيعات والمخزون وتكلفة الإنتاج والتحصيل وأداء الفروع والمناديب.</span><span class="en">KPI dashboards for sales, inventory, production cost, collections, branch and rep performance.</span></p></div><div class="card rv"><div class="ico">🧱</div><h3><span class="ar">نمذجة بيانات وETL</span><span class="en">Data Modeling & ETL</span></h3><p><span class="ar">تنظيف البيانات وبناء Data Model وعلاقات وقياسات DAX وتحديث تلقائي.</span><span class="en">Data cleaning, data models, relationships, DAX measures and scheduled refresh.</span></p></div><div class="card rv"><div class="ico">🔌</div><h3><span class="ar">تكاملات وأتمتة</span><span class="en">Integrations & Automation</span></h3><p><span class="ar">ربط النظام بالمتجر والمحاسبة وأدوات العمل، وأتمتة المهام المتكررة.</span><span class="en">Connecting your system to your store, accounting and tools, and automating repetitive tasks.</span></p></div><div class="card rv"><div class="ico">💻</div><h3><span class="ar">مواقع وصفحات هبوط</span><span class="en">Websites & Landing Pages</span></h3><p><span class="ar">مواقع تعريفية وصفحات إطلاق منتجات بأنيميشن.</span><span class="en">Corporate websites and animated product-launch pages.</span></p></div><div class="card rv"><div class="ico">🛒</div><h3><span class="ar">متاجر إلكترونية</span><span class="en">E-commerce Stores</span></h3><p><span class="ar">متجر بلوحة تحكم لإدارة المنتجات والطلبات.</span><span class="en">Online stores with an admin dashboard to manage products and orders.</span></p></div><div class="card rv"><div class="ico">🎛️</div><h3><span class="ar">تطبيقات وداشبورد مخصصة</span><span class="en">Custom Apps & Admin Panels</span></h3><p><span class="ar">أدوات داخلية على حسب احتياج الشركة.</span><span class="en">Internal tools built around your company’s needs.</span></p></div><div class="card rv"><div class="ico">🎨</div><h3><span class="ar">هوية بصرية وتصميم</span><span class="en">Branding & Design</span></h3><p><span class="ar">لوجو، هوية، UI/UX، وتصاميم السوشيال.</span><span class="en">Logo, brand identity, UI/UX and social media design.</span></p></div><div class="card rv"><div class="ico">📣</div><h3><span class="ar">تسويق رقمي ومحتوى</span><span class="en">Digital Marketing & Content</span></h3><p><span class="ar">خطط محتوى وإعلانات ممولة وإدارة صفحات.</span><span class="en">Content plans, paid ads and page management.</span></p></div><div class="card rv"><div class="ico">🧭</div><h3><span class="ar">استشارات وتحليل عمليات</span><span class="en">Consulting & Process Analysis</span></h3><p><span class="ar">مراجعة دورة العمل وتحديد أولويات التطوير.</span><span class="en">Reviewing your workflow and setting improvement priorities.</span></p></div><div class="card rv"><div class="ico">🎓</div><h3><span class="ar">تدريب</span><span class="en">Training</span></h3><p><span class="ar">تدريب الفرق على الأنظمة والتقارير حسب أدوارهم.</span><span class="en">Training teams on systems and reports by role.</span></p></div></div></div></div>
+
+<div class="contact" id="contact">
+<h2 style="color:#fff"><span class="ar">خلّينا نبدأ</span><span class="en">Let’s get started</span></h2>
+<p><span class="ar">احكيلنا عن نشاطك وأكبر تحدي عندك، ونساعدك تحدد أول خطوة.</span><span class="en">Tell us about your business and your biggest challenge, and we’ll help you find the first step.</span></p>
+<p><a href="mailto:numu.eg27@gmail.com">numu.eg27@gmail.com</a></p>
+<a class="btn" href="https://www.linkedin.com/company/numu-for-teachnology/" target="_blank" rel="noopener">LinkedIn</a><a class="btn o" href="https://www.facebook.com/share/1FHzr3zpv1/" target="_blank" rel="noopener">Facebook</a>
+<p style="opacity:.8"><span class="ar">القاهرة، مصر | نخدم العملاء في أي مكان</span><span class="en">Cairo, Egypt | Serving clients anywhere</span></p>
+</div>
+<footer>© NUMU <span class="ar">نمو. جميع الحقوق محفوظة.</span><span class="en">— All rights reserved.</span></footer>
+<script>
+var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+var H=document.documentElement,B=document.getElementById('lb');
+function setL(l){H.lang=l;H.dir=l=='ar'?'rtl':'ltr';B.textContent=l=='ar'?'English':'العربية';document.title=l=='ar'?'NUMU نمو | بورتفوليو الأعمال':'NUMU | Portfolio'}
+B.onclick=function(){var l=H.lang=='en'?'ar':'en';setL(l);try{localStorage.setItem('numu-l',l)}catch(e){}};
+try{var s=localStorage.getItem('numu-l');if(s)setL(s)}catch(e){}
+</script>
+</body></html>
